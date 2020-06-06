@@ -12,6 +12,7 @@ function App() {
       console.log(data);
       setWeather(data);
       setQuery('');
+      document.activeElement.blur();
     }
   }
   return (
@@ -19,12 +20,12 @@ function App() {
       <input
         type="text"
         className="search" 
-        placeholder="Search..."
+        placeholder="Search for a Town..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
       />
-      {weather.main && (
+      {weather && weather.main && (
         <div className="city">
           <h2 className="city-name">
             <span>{weather.name}</span>
