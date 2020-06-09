@@ -12,6 +12,7 @@ function App() {
       const data = await fetchWeather(query);
       setForecast(data);
       setQuery('');
+      document.activeElement.blur();
     }
   }
   return (
